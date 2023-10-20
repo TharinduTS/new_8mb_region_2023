@@ -6,6 +6,8 @@ module load samtools
 module load bcftools
 mkdir region_1
 
-bcftools query -l ../PCA/vcfs/combined_data_2023_Aug.vcf.gz >files
-while read i; do samtools faidx ../reference_genome/XENTR_10.0_genome_scafconcat_goodnamez.fasta Chr7:8320031-8391760 | bcftools consensus ../PCA/vcfs/combined_data_2023_Aug.vcf.gz --sample "$i" > ./region_1/"$i"out.fa;done<files
+
+find ../*.bam -printf "%f\n">files
+while read i; do samtools consensus --show-del YES -r Chr7:8364998-8371997 -o region_1/"$i".consensus ../"$i";done<files
+
 ```
