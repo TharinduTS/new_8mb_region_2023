@@ -42,3 +42,7 @@ then convert the refion to fsata
 
 python vcf2phylip.py --input ../../../PCA/vcfs/no_mello_no_cal_whole_genome.vcf.gz.recode.vcf.gz --nexus --fasta
 ```
+# approach 2 revisited
+```bash
+sbatch 2022_FastaAlternateReferenceMaker.sh ../../reference_genome/XENTR_10.0_genome_scafconcat_goodnamez.fasta bens_coords1_out.vcf Chr7:8364998-8371998 ../../PCA/vcfs/combined_data_2023_Aug.vcf.gz
+```
