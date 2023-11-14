@@ -50,3 +50,7 @@ sbatch 2022_FastaAlternateReferenceMaker.sh ../../reference_genome/XENTR_10.0_ge
 ```
 gatk HaplotypeCaller -R ../../../reference_genome/XENTR_10.0_genome_scafconcat_goodnamez.fasta -I ../../../F_Ghana_WZ_BJE4687_combined__sorted.bam_rg_rh.bam -L test.bed -ERC BP_RESOLUTION -O out_full.vcf
 ```
+# as a loop
+```
+for i in ../../*bam; do gatk HaplotypeCaller -R ../../reference_genome/XENTR_10.0_genome_scafconcat_goodnamez.fasta -I ${i} -L 8.364mb.bed -ERC BP_RESOLUTION -O ${i##../../}8.364mb.vcf;done
+```
