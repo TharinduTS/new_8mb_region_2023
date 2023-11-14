@@ -54,3 +54,7 @@ gatk HaplotypeCaller -R ../../../reference_genome/XENTR_10.0_genome_scafconcat_g
 ```
 for i in ../../*bam; do gatk HaplotypeCaller -R ../../reference_genome/XENTR_10.0_genome_scafconcat_goodnamez.fasta -I ${i} -L 8.364mb.bed -ERC BP_RESOLUTION -O ${i##../../}8.364mb.vcf;done
 ```
+# convert vcf to fasta
+```
+for i in *vcf;do python vcf2phylip.py --input ${i} --fasta;done
+```
