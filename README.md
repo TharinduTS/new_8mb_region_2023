@@ -46,3 +46,7 @@ python vcf2phylip.py --input ../../../PCA/vcfs/no_mello_no_cal_whole_genome.vcf.
 ```bash
 sbatch 2022_FastaAlternateReferenceMaker.sh ../../reference_genome/XENTR_10.0_genome_scafconcat_goodnamez.fasta bens_coords1_out.vcf Chr7:8364998-8371998 ../../PCA/vcfs/combined_data_2023_Aug.vcf.gz
 ```
+# new GATK
+```
+gatk HaplotypeCaller -R ../../../reference_genome/XENTR_10.0_genome_scafconcat_goodnamez.fasta -I ../../../F_Ghana_WZ_BJE4687_combined__sorted.bam_rg_rh.bam -L test.bed -ERC BP_RESOLUTION -O out_full.vcf
+```
