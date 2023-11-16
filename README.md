@@ -58,3 +58,9 @@ for i in ../../*bam; do gatk HaplotypeCaller -R ../../reference_genome/XENTR_10.
 ```
 for i in *vcf;do python vcf2phylip.py --input ${i} --fasta;done
 ```
+# align fastas
+
+```
+module load muscle
+muscle -in input1.fasta -in input2.fasta>output.fasta
+```
