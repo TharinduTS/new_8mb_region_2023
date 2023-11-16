@@ -60,7 +60,8 @@ for i in *vcf;do python vcf2phylip.py --input ${i} --fasta;done
 ```
 # align fastas
 
-```
+```bash
 module load muscle
 muscle -in input1.fasta -in input2.fasta>output.fasta
+
 ```
